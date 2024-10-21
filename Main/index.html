@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Weather Header -->
+        <header>
+            <h1>Weather App</h1>
+            <div class="unit-selector">
+                <select id="degree" class="dropdown-select">
+                    <option value="C">°Celsius</option>
+                    <option value="K">°Kelvin</option>
+                    <option value="F">°Fahrenheit</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main Weather Card -->
+        <div class="weather-card">
+            <div class="search-section">
+                <input type="text" id="city-input" class="search-bar" placeholder="Enter city name...">
+                <button id="search-btn">Search</button>
+            </div>
+
+            <div id="weather-info" class="weather-info">
+                <h2 class="city">Weather in Mumbai</h2>
+                <div class="temp-container">
+                    <h1 class="temp">26.66°C</h1>
+                    <h3 class="temp-feels-like">Feels like 26.00°C</h3>
+                </div>
+                <div class="additional-info">
+                    <img src="https://openweathermap.org/img/wn/04n.png" alt="Weather Icon" class="icon" />
+                    <div class="description">Cloudy</div>
+                    <p class="datetime">Last updated: 2023-10-21 14:30</p>
+                </div>
+            </div>
+
+            <!-- Threshold Input -->
+            <div class="threshold-section">
+                <input type="number" id="threshold-input" class="threshold-input" placeholder="Set Temperature Threshold (°C)">
+                <div id="alert-message" class="alert"></div>
+            </div>
+
+            <!-- Weather Details -->
+            <div class="weather-details">
+                <div class="detail">Humidity: 60%</div>
+                <div class="detail">Wind speed: 6.2 km/h</div>
+                <div class="summary">
+                    <h4>Today's Summary</h4>
+                    <div>Min Temp: 22°C</div>
+                    <div>Max Temp: 30°C</div>
+                    <div>Avg Temp: 26°C</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weather Forecast -->
+        <section class="forecast">
+            <h3>5-Day Weather Forecast</h3>
+            <div class="forecast-container">
+                <div class="forecast-item">
+                    <img src="https://openweathermap.org/img/wn/04n.png" class="forecast-icon">
+                    <div class="forecast-temp">26°C</div>
+                    <div class="forecast-date">22/10</div>
+                </div>
+                <div class="forecast-item">
+                    <img src="https://openweathermap.org/img/wn/04n.png" class="forecast-icon">
+                    <div class="forecast-temp">28°C</div>
+                    <div class="forecast-date">23/10</div>
+                </div>
+                <!-- More forecast items here -->
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

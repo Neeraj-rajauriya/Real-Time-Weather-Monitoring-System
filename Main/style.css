@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px; /* Decreased padding */
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2em; /* Decreased font size */
+  margin-bottom: 5px; /* Decreased margin */
+  color: #00796b;
+}
+
+.unit-selector {
+  margin-bottom: 10px; /* Decreased margin */
+}
+
+.dropdown-select {
+  font-size: 1.1em; /* Decreased font size */
+  padding: 8px; /* Decreased padding */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.dropdown-select:focus {
+  border-color: #009688;
+}
+
+.weather-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px; /* Decreased padding */
+  margin-bottom: 15px; /* Decreased margin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.weather-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px; /* Decreased margin */
+}
+
+.search-bar {
+  padding: 8px; /* Decreased padding */
+  font-size: 1.1em; /* Decreased font size */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px; /* Decreased width */
+  transition: border-color 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #009688;
+}
+
+#search-btn {
+  padding: 8px 12px; /* Decreased padding */
+  font-size: 1.1em; /* Decreased font size */
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px; /* Decreased margin */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#search-btn:hover {
+  background-color: #00796b;
+  transform: scale(1.05);
+}
+
+.weather-info {
+  text-align: center;
+}
+
+.temp-container {
+  margin: 15px 0; /* Decreased margin */
+}
+
+.temp {
+  font-size: 2.5em; /* Decreased font size */
+  font-weight: bold;
+  color: #e74c3c;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.temp-feels-like {
+  font-size: 1.3em; /* Decreased font size */
+  color: #555;
+}
+
+.additional-info {
+  margin: 5px 0; /* Decreased margin */
+}
+
+.icon {
+  width: 80px; /* Decreased width */
+}
+
+.weather-details {
+  margin-top: 15px; /* Decreased margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail {
+  margin: 3px 0; /* Decreased margin */
+}
+
+.summary {
+  margin-top: 8px; /* Decreased margin */
+}
+
+.forecast {
+  margin-top: 20px; /* Decreased margin */
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.forecast-item {
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.forecast-item:hover {
+  transform: scale(1.05);
+}
+
+.forecast-icon {
+  width: 50px;
+}
+
+.threshold-section {
+  margin-top: 15px; /* Decreased margin */
+  text-align: center;
+}
+
+.threshold-input {
+  width: 80%;
+  padding: 8px; /* Decreased padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1em; /* Decreased font size */
+  transition: border-color 0.3s;
+}
+
+.threshold-input:focus {
+  border-color: #009688;
+}
+
+.alert {
+  background-color: #ffcccc;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  padding: 8px; /* Decreased padding */
+  margin-top: 8px; /* Decreased margin */
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.alert.show {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    width: 100%; /* Full width on small screens */
+  }
+
+  .forecast-container {
+    flex-direction: column; /* Stack forecast items vertically on small screens */
+    align-items: center; /* Center align forecast items */
+  }
+
+  .forecast-item {
+    margin-bottom: 10px; /* Decreased spacing between forecast items */
+  }
+}
