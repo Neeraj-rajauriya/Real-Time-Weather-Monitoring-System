@@ -3,9 +3,19 @@ const weather = {
   unit: "metric", // Default to Celsius
   alertThreshold: 35, // Default threshold for alerts
   consecutiveAlertCount: 0, // Counter for consecutive alerts
+  city: "", // Track the last searched city
 
   fetchWeather: function () {
-    const city = document.querySelector(".search-bar").value; // Get the city from the input field
+    const cityInput = document.querySelector(".search-bar").value;
+    const city = cityInput || this.city; // Use the last searched city if the input is empty
+
+    if (!city) {
+      alert("Please enter a city.");
+      return;
+    }
+
+    this.city = city; // Store the searched city
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=${this.unit}`)
       .then((response) => {
         if (!response.ok) {
@@ -124,6 +134,12 @@ const weather = {
       this.consecutiveAlertCount = 0; // Reset counter if temperature is below threshold
     }
   },
+
+  startAutoUpdate: function () {
+    setInterval(() => {
+      this.fetchWeather(); // Fetch weather every 5 minutes
+    }, 300000); // 300,000 ms = 5 minutes
+  },
 };
 
 // Event listener for search button
@@ -149,5 +165,8 @@ document.getElementById('threshold-input').addEventListener('input', () => {
   const currentTemperature = document.querySelector('.temp').textContent.split('°')[0]; // Get current temperature
   weather.checkConsecutiveAlerts(Number(currentTemperature));
 });
+
+// Start automatic weather updates every 5 minutes
+weather.startAutoUpdate();
 
 
